@@ -6,7 +6,7 @@ import { WiDaySunny, WiNightClear, WiDayCloudy, WiRain, WiDayRainMix } from 'rea
 const getDayAndHHMM = (rawdata) => {
         const date = new Date(rawdata + 'T00:00:00'); // Add time for valid date
         return date.toLocaleDateString('en-IN', {
-            weekday: 'long',    // Friday
+            weekday: 'long',    // 
             hour: 'numeric',    // 12
             minute: '2-digit',  // 19
             hour12: true        // PM
@@ -55,14 +55,15 @@ function CurrentWeather({data,location}) {
         return <WiDaySunny className="text-6xl mb-2" />;
     }
     const Icon = getWeatherIcon(conditions, data.icon);
-    return (<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto p-6  items-center">
-            <div className={`lg:col-span-2 bg-gradient-to-br ${getTempBg(temp)} backdrop-blur-xl rounded-3xl p-8 text-white`}>
+    return (<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto p-6  items-center ">
+            <div className={`md:col-span-3 bg-linear-to-br ${getTempBg(temp)} backdrop-blur-xl rounded-3xl p-8 text-white`}>
                 <div className="text-center lg:text-left">
                     <h2 className="text-2xl lg:text-3xl font-bold mb-2">{name}</h2>
                     <h1 className="text-6xl lg:text-7xl font-black mb-4">{Math.round(temp)}°</h1>
                     <p className="text-2xl font-semibold mb-4">
                         ⬆{Math.round(tempmax)}°C / ⬇{Math.round(tempmin)}°C
                     </p>
+            
                     <p className="text-lg opacity-90 mb-1">Feels like {feelslike}</p>
                     <p className="text-lg opacity-90 mb-2">{getDayAndHHMM(datetime)}</p>
                     <small className="opacity-75">{description}</small>
@@ -72,7 +73,7 @@ function CurrentWeather({data,location}) {
                     <p className="opacity-75">{icon}</p>
                         {Icon}
                 </div>
-            <div className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-6 text-white border border-white/20">
+            <div className="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-6 text-white border border-white/20">
                 <div className="space-y-4">
                     <div className="flex justify-between items-center p-3 bg-white/10 rounded-xl">
                         <span className="text-gray-200">🍃 Wind</span>

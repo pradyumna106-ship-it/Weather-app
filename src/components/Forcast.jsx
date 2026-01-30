@@ -4,6 +4,7 @@ import CurrentWeather from './CurrentWeather';
 import SesrchBar from './SesrchBar';
 import WeeklyForecast from './WeeklyForecast';
 import HourlyForecast from './HourlyForecast';
+import { DiVisualstudio } from 'react-icons/di';
 function Forcast() {
     const [city, setCity] = useState('')
     const [forecast,setForecast] = useState({});
@@ -44,7 +45,7 @@ function Forcast() {
     const bgClass = today ? getWeatherBg(today.conditions) : 'bg-gradient-to-br from-gray-500/20 to-blue-600/40';
     
     console.log(forecast);
-    return (<div className={`w-full max-w-6xl mx-auto p-6 min-h-screen ${bgClass}`}>
+    return (<div className={`flex flex-col items-center justify-center w-full max-w-6xl mx-auto p-6 min-h-screen ${bgClass} `}>
         <SesrchBar onSearch={(value) => setCity(value)} />
         {loading && <p>.....</p>}
         {error && <p>{error}</p>}
