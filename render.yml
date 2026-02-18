@@ -2,8 +2,8 @@ services:
 - type: web
   name: weather-app
   env: node
-  buildCommand: yarn install
-  startCommand: yarn start
+  buildCommand: npm run dev
+  startCommand: npm build run
   envVars:
     - key: NODE_ENV
       value: production

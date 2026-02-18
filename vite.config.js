@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/weather': {  // Proxy /weather/* to backend
-        target: 'http://localhost:8083',
+        target: 'https://weather-api-production-f78d.up.railway.app',
         changeOrigin: true,
         secure: false
       }
