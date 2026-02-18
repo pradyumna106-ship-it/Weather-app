@@ -1,5 +1,5 @@
 import React from 'react'
-import { format,parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import { WiDaySunny, WiNightClear, WiDayCloudy, WiRain, WiDayRainMix } from 'react-icons/wi';
 export default function DayCard({day}) {
     const getWeatherIcon = (condition, icon) => {
